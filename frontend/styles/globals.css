@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+.custom-img {
+  background-image: url("https://etherscan.io/images/svg/waves-light.svg");
+}
