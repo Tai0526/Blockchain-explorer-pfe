@@ -28,7 +28,7 @@ export default function Header() {
           ETH Price:{" "}
           <span className="text-blue-500">${Number(ethPrice).toFixed(2)}</span>
           &nbsp; Gas: {""}
-          <span className="text-blue-500">30 Gwei</span>
+          <span className="text-blue-500">230 Gwei</span>
         </section>
       </nav>
       <nav className=" bg-gray-900">
