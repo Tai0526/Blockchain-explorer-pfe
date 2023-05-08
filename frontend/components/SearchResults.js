@@ -4,8 +4,8 @@ import styles from "@/styles/Home.module.css";
 export default function SearchResults(props) {
   return (
     <section className={styles.searchResults}>
-      <p className={styles.amountOfTransactions}>
-        Latest 25 from a total of{"  "}
+      <p className="flex items-left justify-left text-left text-white text-xl font-semibold p-1">
+        Latest 25 from a total of &nbsp;{"  "}
         <span className={styles.blueText}>{props.result.result.length}</span>
         -transactions
       </p>
@@ -26,15 +26,17 @@ export default function SearchResults(props) {
         {props.result.result.map((txn) => {
           return (
             <tr className={styles.txn}>
-              <td className={styles.blueText}>{txn.hash.slice(0, 16)}...</td>
+              <td className={styles.blueText}>{txn.hash.slice(0, 10)}...</td>
               <td>
                 <span className={styles.transfer}>
                   {txn.decoded_call ? txn.decoded_call.label : "Unknown"}
                 </span>
               </td>
               <td className={styles.blueText}>{txn.block_number}</td>
-              <td>{moment(txn.block_timestamp, "YYYYMMDD").fromNow()}</td>
-              <td>
+              <td className="text-white">
+                {moment(txn.block_timestamp, "YYYYMMDD").fromNow()}
+              </td>
+              <td className="text-white">
                 {txn.from_address.slice(0, 8)}...{txn.from_address.slice(34)}
               </td>
               <td>
@@ -55,8 +57,12 @@ export default function SearchResults(props) {
               <td className={styles.blueText}>
                 {txn.to_address.slice(0, 8)}...{txn.to_address.slice(34)}
               </td>
-              <td>{(txn.value / 10 ** 18).toFixed(5)} ETH</td>
-              <td>{(txn.gas_price / 10 ** 18).toFixed(12)}</td>
+              <td className="text-white">
+                {(txn.value / 10 ** 18).toFixed(5)} ETH
+              </td>
+              <td className="text-gray-700">
+                {(txn.gas_price / 10 ** 18).toFixed(12)}
+              </td>
             </tr>
           );
         })}

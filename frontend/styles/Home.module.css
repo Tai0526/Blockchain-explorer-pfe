@@ -204,7 +204,7 @@
 }
 
 .searchResults {
-  background-color: #080c13;
+  background-color: #111a2e;
   margin: 2rem;
   border: 1px solid #222222;
   border-radius: 0.5rem;
@@ -221,20 +221,20 @@
 }
 
 .blueText {
-  color: #7cb3d7;
+  color: #096a9c;
 }
 
 .txnSection {
   display: flex;
   flex-direction: column;
   align-content: space-between;
+  font-size: 13.5px;
 }
 
 .txnTitle {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #191919;
-  margin-bottom: 1rem;
+  border-bottom: 1px solid #646262;
   padding-bottom: 1rem;
   color: #fff;
 }
@@ -247,7 +247,7 @@
 .txn {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #191919;
+  border-bottom: 1px solid #646262;
 }
 
 .txn > td {
@@ -262,10 +262,11 @@
 .transfer {
   font-size: 0.8rem;
   width: 8rem;
-  background-color: #151515;
+  background-color: #162138;
   padding: 0.35rem 1.2rem;
   border: 1px solid #2c2c2c;
   border-radius: 0.3rem;
+  color: white;
 }
 
 .inTxn {

@@ -31,8 +31,8 @@ export default function Header() {
           <span className="text-blue-500">230 Gwei</span>
         </section>
       </nav>
-      <nav className=" bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1 mt-9">
+      <nav className=" bg-gray-900 w-full ">
+        <div className=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1 mt-9">
           <Link href="/" class="flex items-center">
             <Image src={Logo} alt="BlockchainX logo" className={styles.logo} />
           </Link>

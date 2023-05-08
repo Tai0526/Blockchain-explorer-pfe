@@ -46,13 +46,13 @@ const Transactions = () => {
     <div>
       <section className="w-screen">
         <section className="flex justify-center  h-[17rem] pt-[3rem] p-[0 11.5rem] custom-img">
-          <div className=" flex items-center justify-center text-center text-white text-5xl font-bold">
+          <div className=" flex items-center justify-center text-center text-white text-4xl font-semibold">
             <h2>Transactions</h2>
           </div>
         </section>
       </section>
       <section className={styles.searchResults}>
-        <section className={styles.amountOfTransactions}>
+        <section className=" flex items-center justify-center text-center text-white text-2xl font-semibold p-5">
           Latest Transactions
         </section>
         <table className={styles.txnSection}>
