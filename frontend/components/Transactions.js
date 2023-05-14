@@ -43,7 +43,7 @@ const Transactions = () => {
   }, []);
 
   return (
-    <div>
+    <>
       <section className="w-screen">
         <section className="flex justify-center  h-[17rem] pt-[3rem] p-[0 11.5rem] custom-img">
           <div className=" flex items-center justify-center text-center text-white text-4xl font-semibold">
@@ -106,7 +106,7 @@ const Transactions = () => {
           </tbody>
         </table>
       </section>
-    </div>
+    </>
   );
 };
 

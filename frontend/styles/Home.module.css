@@ -77,7 +77,7 @@
 
 .searchHeader {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.506);
+  background-color: rgba(143, 83, 158, 0.493);
   background-image: url("https://etherscan.io/images/svg/waves-light.svg");
   height: 17rem;
   padding: 0 11.5rem;
@@ -146,18 +146,18 @@
   align-items: center;
   width: 50.5rem;
   height: 3rem;
-  border: 1px solid #191919;
+  border: 1px solid rgba(76, 42, 85, 0.493);
   border-radius: 0.3rem;
-  background-color: #111111;
+  background-color: rgba(76, 42, 85, 0.493);
 }
 
 .inputField {
   width: 48rem;
-  color: #ffffff;
+  color: #bbb;
   height: 2rem;
   padding-left: 2rem;
   border: none;
-  background-color: #111111;
+  background-color: transparent;
   font-size: 1rem;
 }
 
@@ -306,12 +306,12 @@
 .latestResults_header {
   display: flex;
   justify-content: space-between;
-  background-color: #111111;
+  background-color: rgb(55, 32, 61);
   height: 11rem;
   margin: 0 11.5rem;
-  border: 1px solid #222222;
+  border: 1px solid rgb(55, 32, 61);
   border-radius: 1rem;
-  box-shadow: 0rem 0 1.5rem #ffffff09;
+  box-shadow: 0rem 0 1.5rem #2c2424b4;
 }
 
 .latestResults_header > section {
@@ -383,13 +383,12 @@
 .latestResults_body > section {
   display: flex;
   flex-direction: column;
-  background-color: #111111;
+  background-color: rgb(55, 32, 61);
   width: 49.5%;
   height: 100%;
   /* padding: 1rem 0; */
-  border: 1px solid #222222;
   border-radius: 1rem;
-  box-shadow: 0rem 0 1.5rem #ffffff09;
+  box-shadow: 0rem 0 1.5rem rgb(102, 101, 102);
 }
 
 .latestResults_body_title {
@@ -400,7 +399,6 @@
   height: 4rem;
   padding: 1.2rem;
   color: #fff;
-  border-bottom: 1px solid #222222;
 }
 
 .latestResults_body_table {

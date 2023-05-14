@@ -56,6 +56,12 @@ export default function HeroSection() {
     getBlockInfo();
   }, []);
 
+  const limitTransactions = (transactions) => {
+    const limit = 5;
+    const limitedTransactions = transactions.slice(0, limit);
+    return limitedTransactions;
+  };
+
   return (
     <section className={styles.heroSectionContainer}>
       {showResult && (
@@ -116,7 +122,7 @@ export default function HeroSection() {
                 </section>
                 <section className={styles.hero_box}>
                   <p>MARKET CAP</p>
-                  <p className={styles.heroValues}>$196,968,104,207.00</p>
+                  <p className={styles.heroValues}>$223,920,408,826.00</p>
                 </section>
               </section>
             </section>
@@ -144,7 +150,7 @@ export default function HeroSection() {
                 </section>
               </section>
             </section>
-            <section>
+            <section className="custom-section">
               <section className={styles.hero_averageValue}>
                 <p>Average Transaction Value</p>
               </section>
@@ -197,6 +203,7 @@ export default function HeroSection() {
                   })}
                 </tbody>
               </table>
+              <button>View All</button>
             </section>
             <section>
               <section className={styles.latestResults_body_title}>
@@ -204,7 +211,7 @@ export default function HeroSection() {
               </section>
               <table className={styles.latestResults_body_table}>
                 <tbody>
-                  {transactionsResult.map((txn) => {
+                  {limitTransactions(transactionsResult).map((txn) => {
                     return (
                       <tr
                         className={`${styles.latestResults_body_tr} ${
@@ -254,6 +261,7 @@ export default function HeroSection() {
                   })}
                 </tbody>
               </table>
+              <button>View All</button>
             </section>
           </section>
         </section>

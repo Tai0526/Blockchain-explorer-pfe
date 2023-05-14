@@ -23,15 +23,15 @@ export default function Header() {
 
   return (
     <div>
-      <nav className=" bg-gray-900">
-        <section className="bg-gradient-to-r from-indigo-900 to-violet-500 bg-indigo-900 fixed w-full z-20 top-0 left-0 border-b border-indigo-800 p-2 text-sm text-gray-400 pl-10">
+      <nav className=" bg-[#37203D]">
+        <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500 fixed w-full z-20 top-0 left-0  p-2 text-sm text-white pl-10">
           ETH Price:{" "}
-          <span className="text-blue-500">${Number(ethPrice).toFixed(2)}</span>
+          <span className="text-blue-900">${Number(ethPrice).toFixed(2)}</span>
           &nbsp; Gas: {""}
-          <span className="text-blue-500">230 Gwei</span>
+          <span className="text-blue-900">83 Gwei</span>
         </section>
       </nav>
-      <nav className=" bg-gray-900 w-full ">
+      <nav className=" bg-[#37203D] w-full ">
         <div className=" max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1 mt-9">
           <Link href="/" class="flex items-center">
             <Image src={Logo} alt="BlockchainX logo" className={styles.logo} />
@@ -59,7 +59,7 @@ export default function Header() {
             </svg>
           </button>
           <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0 bg-[#37203D] ">
               <li>
                 <a
                   href="/"
@@ -107,14 +107,6 @@ export default function Header() {
                   }
                 >
                   Transactions
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >
-                  Resources
                 </a>
               </li>
             </ul>

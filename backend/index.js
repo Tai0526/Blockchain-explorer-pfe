@@ -56,6 +56,8 @@ app.get("/getblockinfo", async (req, res) => {
               fromAddress: i.from_address,
               toAddress: i.to_address,
               value: i.value,
+              status: i.status,
+              gas: i.gas_price,
             };
           }),
         });

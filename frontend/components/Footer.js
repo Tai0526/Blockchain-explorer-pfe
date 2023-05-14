@@ -5,7 +5,7 @@ import styles from "@/styles/Home.module.css";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="bg-[#2a182e]">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -29,7 +29,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/transactins" className="hover:underline">
+                  <a href="/transactions" className="hover:underline">
                     Transactions
                   </a>
                 </li>
