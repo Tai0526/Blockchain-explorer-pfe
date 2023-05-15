@@ -13,7 +13,7 @@ export default function Home() {
         <title>BlockchainX</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500">
+      <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500 pb-10">
         <SearchComp />
         <Hero />
       </section>

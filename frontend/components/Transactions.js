@@ -51,7 +51,7 @@ const Transactions = () => {
           </div>
         </section>
       </section>
-      <section className={styles.searchResults}>
+      {/* <section className={styles.searchResults}>
         <section className=" flex items-center justify-center text-center text-white text-2xl font-semibold p-5">
           Latest Transactions
         </section>
@@ -105,7 +105,7 @@ const Transactions = () => {
             })}
           </tbody>
         </table>
-      </section>
+      </section> */}
     </>
   );
 };

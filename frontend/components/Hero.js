@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import axios from "axios";
 import moment from "moment";
+import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 import {
   faCube,
@@ -203,7 +203,9 @@ export default function HeroSection() {
                   })}
                 </tbody>
               </table>
-              <button>View All</button>
+              <button className="text-l text-white p-4 text-bold">
+                <Link href="/blocks">View All</Link>
+              </button>
             </section>
             <section>
               <section className={styles.latestResults_body_title}>
@@ -261,7 +263,9 @@ export default function HeroSection() {
                   })}
                 </tbody>
               </table>
-              <button>View All</button>
+              <button className="text-l text-white p-4 text-bold">
+                <Link href="/transactions">View All</Link>
+              </button>
             </section>
           </section>
         </section>
