@@ -18,9 +18,12 @@ export default function Search() {
   const handleSearch = async () => {
     document.querySelector("#inputField").value = "";
 
-    const response = await axios.get("http://localhost:5001/address", {
-      params: { address: searchInput },
-    });
+    const response = await axios.get(
+      "https://blockchain-x-api.onrender.com/address",
+      {
+        params: { address: searchInput },
+      }
+    );
 
     setResult(response.data.result);
     setShowResult(true);

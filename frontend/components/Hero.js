@@ -22,13 +22,16 @@ export default function HeroSection() {
 
   useEffect(() => {
     const getEthPrice = async () => {
-      const response = await axios.get(`http://localhost:5001/getethprice`, {});
+      const response = await axios.get(
+        `https://blockchain-x-api.onrender.com/getethprice`,
+        {}
+      );
       setEthPrice(response.data.usdPrice);
     };
 
     const getBlockInfo = async () => {
       const response = await axios.get(
-        `http://localhost:5001/getblockinfo`,
+        `https://blockchain-x-api.onrender.com/getblockinfo`,
         {}
       );
       console.log("rrr", response);
