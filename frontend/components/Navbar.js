@@ -14,7 +14,10 @@ export default function Header() {
 
   useEffect(() => {
     const getEthPrice = async () => {
-      const response = await axios.get("http://localhost:5001/getethprice", {});
+      const response = await axios.get(
+        "https://blockchain-x-api.onrender.com/getethprice",
+        {}
+      );
       setEthPrice(response.data.usdPrice);
     };
 
