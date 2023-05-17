@@ -32,10 +32,7 @@ export default function Header() {
     window.addEventListener("scroll", changeColor);
 
     const getEthPrice = async () => {
-      const response = await axios.get(
-        "https://blockchain-x-api.onrender.com/getethprice",
-        {}
-      );
+      const response = await axios.get("http://localhost:5001/getethprice", {});
       setEthPrice(response.data.usdPrice);
     };
 
