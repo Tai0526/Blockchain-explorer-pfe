@@ -19,6 +19,10 @@ export default function HeroSection() {
   const [ethPrice, setEthPrice] = useState("");
   const [totalTransactions, setTotalTransactions] = useState("");
   const [latestBlock, setLatestBlock] = useState("");
+  const [tableDesign, setTableDesign] = useState(false);
+  const handleTableDesign = () => {
+    setTableDesign(!tableDesign);
+  };
 
   useEffect(() => {
     const getEthPrice = async () => {
@@ -167,9 +171,9 @@ export default function HeroSection() {
               </section>
             </section>
           </section>
-          <section className="flex sm:flex-wrap content-evenly justify-between w-[80%] m-auto mt-8">
-            <section className="flex-col items-center bg-[#37203d] w-[49.5%] h-full rounded-[1rem] shadow-lg shadow-[#4d4b4d]">
-              <section className="flex justify-start items-center w-full h-[4rem] p-[1.2rem] text-white text-lg text-extrabold border-b border-gray-500 ">
+          <section className=" md:flex md:content-evenly md:justify-between md:w-[80%] m-auto mt-8">
+            <section className="flex-col items-center bg-[#37203d] w-full md:w-[49.5%] h-full rounded-[1rem] shadow-lg shadow-[#4d4b4d]">
+              <section className="flex justify-start items-center w-full h-[4rem] p-[1.2rem] text-white text-lg text-extrabold border-b border-[#9249a7] ">
                 Latest Blocks
               </section>
               <table className="flex justify-center items-center text-gray-300">
@@ -177,7 +181,7 @@ export default function HeroSection() {
                   {blockResult.map((block) => {
                     return (
                       <tr
-                        className={`flex justify-between items-center border-b-[1px] border-gray-500 w-full h-[5rem] pr-0 pl-[1rem] ${
+                        className={`flex justify-between items-center border-b-[1px] border-[#9249a7] w-full h-[5rem] pr-0 pl-[1rem] ${
                           blockResult.indexOf(block) ==
                             blockResult.length - 1 && styles.lastTd
                         }`}
@@ -208,47 +212,51 @@ export default function HeroSection() {
                             </span>
                           </section>
                         </td>
-                        <td className={styles.tdValue}>{block.gasUsed} Eth</td>
+                        <td className="w-[7rem] items-center text-center text-[0.8rem] bg-[#151515] px-[0.35rem] py-[0.9rem] border-[#2c2c2c] rounded-[0.3rem]">
+                          {block.gasUsed} Eth
+                        </td>
                       </tr>
                     );
                   })}
                 </tbody>
               </table>
-              <button className="text-l text-white p-4 text-bold">
-                <Link href="/blocks">View All</Link>
-              </button>
+              <section className="text-center items-center justify-center bg-[#281a2c] rounded-br-[1rem] rounded-bl-[1rem] border-t-[2px] border-[#9249a7]">
+                <button className="text-l text-white p-4 text-bold">
+                  <Link href="/transactions">View All</Link>
+                </button>
+              </section>
             </section>
-            <section className="flex-col bg-[#37203d] w-[49.5%] h-full rounded-[1rem] shadow-md shadow-[#666566]">
-              <section className="flex justify-start items-center w-full h-[4rem] p-[1.2rem] text-white text-lg text-extrabold border-b border-gray-500 ">
+
+            <section className="hidden md:block flex-col bg-[#37203d] w-full md:w-[49.5%] h-full rounded-[1rem] shadow-md shadow-[#666566] mt-6 md:mt-0">
+              <section className="flex justify-start items-center w-full h-[4rem] p-[1.2rem] text-white text-lg text-extrabold border-b border-[#9249a7] ">
                 Latest Transactions
               </section>
-              <table className={styles.latestResults_body_table}>
-                <tbody>
+              <table className="row md:flex justify-center items-center text-gray-300">
+                <tbody className="w-[95%]">
                   {limitTransactions(transactionsResult).map((txn) => {
                     return (
                       <tr
-                        className={`${styles.latestResults_body_tr} ${
+                        className={`flex justify-start md:justify-between md:items-center border-b-[1px] border-[#9249a7] w-full h-[5rem] pr-0 pl-[1rem] ${
                           transactionsResult.indexOf(txn) ==
                             transactionsResult.length - 1 && styles.lastTd
                         }`}
                         key={txn.transactionHash}
                       >
-                        <td className={styles.tdContract}>
+                        <td className="hidden sm:block w-[1rem]">
                           <FontAwesomeIcon
                             icon={faFileContract}
-                            className={styles.tdContract}
+                            className="w-[0.5rem]"
                           />
                         </td>
-                        <td className={styles.tdBlock}>
-                          <section className={styles.blueText}>
+                        <td className="md:w-[11rem] md:pl-[0.5rem]">
+                          <section className="text-blue-500">
                             {txn.transactionHash?.slice(0, 14)}...
-                          </section>
-                          <section>
                             {moment(txn.time, "YYYYMMDD").fromNow()}
                           </section>
                         </td>
-                        <td className={styles.tdFromTo}>
-                          <section>
+
+                        <td>
+                          <section className="items-start justify-start ">
                             From{" "}
                             <span className={styles.blueText}>
                               {txn.fromAddress?.slice(0, 6)}...
@@ -266,7 +274,8 @@ export default function HeroSection() {
                             </span>
                           </section>
                         </td>
-                        <td className={styles.tdValue}>
+
+                        <td className="text-center mt-8 md:mt-0 w-[5rem] h-[2.5rem] md:h-[2rem] md:w-[7rem] text-[0.8rem] bg-[#151515] py-3 md:px-[0.2rem] md:py-[0.5rem] border-[#2c2c2c] rounded-[0.3rem]">
                           {(Number(txn.value) / 10 ** 18).toFixed(4)} Eth
                         </td>
                       </tr>
@@ -274,9 +283,67 @@ export default function HeroSection() {
                   })}
                 </tbody>
               </table>
-              <button className="text-l text-white p-4 text-bold">
-                <Link href="/transactions">View All</Link>
-              </button>
+              <section className="text-center items-center justify-center bg-[#281a2c] rounded-br-[1rem] rounded-bl-[1rem] border-t-[1px] border-[#9249a7]">
+                <button className="text-l text-white p-4 text-bold">
+                  <Link href="/transactions">View All</Link>
+                </button>
+              </section>
+            </section>
+            <section onResize={handleTableDesign} className="block sm:hidden">
+              <section className="flex-col bg-[#37203d] w-full md:w-[49.5%] h-full rounded-[1rem] shadow-md shadow-[#666566] mt-6 md:mt-0">
+                <section className="flex justify-start items-center w-full h-[4rem] p-[1.2rem] text-white text-lg text-extrabold border-b border-[#9249a7] ">
+                  Latest Transactions
+                </section>
+                <table className="row md:flex justify-center items-center text-gray-300">
+                  <tbody className="w-[95%]">
+                    {limitTransactions(transactionsResult).map((txn) => {
+                      return (
+                        <tr
+                          className={`flex justify-start md:justify-between md:items-center border-b-[1px] border-[#9249a7] w-full h-[5rem] pr-0 pl-[1rem] ${
+                            transactionsResult.indexOf(txn) ==
+                              transactionsResult.length - 1 && styles.lastTd
+                          }`}
+                          key={txn.transactionHash}
+                        >
+                          <td className="md:w-[11rem] md:pl-[0.5rem]">
+                            <section className="text-blue-500">
+                              {txn.transactionHash?.slice(0, 14)}...
+                              {moment(txn.time, "YYYYMMDD").fromNow()}
+                            </section>
+
+                            <section className="items-start justify-start ">
+                              From{" "}
+                              <span className={styles.blueText}>
+                                {txn.fromAddress?.slice(0, 6)}...
+                                {txn.fromAddress?.slice(36)}
+                              </span>
+                            </section>
+                            <section>
+                              To{" "}
+                              <span className={styles.blueText}>
+                                {txn.toAddress?.slice(0, 6)}...
+                                {txn.toAddress?.slice(36)}
+                              </span>
+                              <span className={styles.blueText}>
+                                {txn.totalTransactions}
+                              </span>
+                            </section>
+                          </td>
+
+                          <td className="text-center mt-8 md:mt-0 w-[5rem] h-[2.5rem] md:h-[2rem] md:w-[7rem] text-[0.8rem] bg-[#151515] py-3 md:px-[0.2rem] md:py-[0.5rem] border-[#2c2c2c] rounded-[0.3rem]">
+                            {(Number(txn.value) / 10 ** 18).toFixed(4)} Eth
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+                <section className="text-center items-center justify-center bg-[#281a2c] rounded-br-[1rem] rounded-bl-[1rem] border-t-[1px] border-[#9249a7]">
+                  <button className="text-l text-white p-4 text-bold">
+                    <Link href="/transactions">View All</Link>
+                  </button>
+                </section>
+              </section>
             </section>
           </section>
         </section>

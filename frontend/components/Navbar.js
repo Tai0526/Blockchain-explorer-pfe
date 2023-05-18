@@ -10,14 +10,20 @@ import Logo from "../public/logo-final.png";
 
 export default function Header() {
   const [nav, setNav] = useState(false);
+  const [mobile, setMobile] = useState(false);
   const [color, setColor] = useState("transparent");
   const [textColor, setTextColor] = useState("white");
-  const handleNav = () => {
-    setNav(!nav);
-  };
   const [ethPrice, setEthPrice] = useState("");
   const router = useRouter();
   const currentRoute = router.pathname;
+
+  const handleNav = () => {
+    setNav(!nav);
+  };
+
+  const mobileView = () => {
+    setMobile(!mobile);
+  };
 
   useEffect(() => {
     const changeColor = () => {
@@ -41,8 +47,12 @@ export default function Header() {
 
   return (
     <div>
-      <nav className=" bg-[#37203D]">
-        <section className="bg-gradient-to-r from-violet-500 to-fuchsia-500 fixed w-full z-20 top-0 left-0  p-2 text-sm text-white pl-10">
+      <nav>
+        <section
+          onResize={mobileView}
+          className="block sm:hidden mt-[-2.2rem]"
+        ></section>
+        <section className="hidden md:block bg-gradient-to-r from-violet-500 to-fuchsia-500 fixed w-full z-20 top-0 left-0  p-2 text-sm text-white pl-10">
           ETH Price:{" "}
           <span className="text-blue-900">${Number(ethPrice).toFixed(2)}</span>
           &nbsp; Gas: {""}
